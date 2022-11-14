@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class ProductServiceImplemantation implements ProductService {
+public class ProductServiceImplementation implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
@@ -22,7 +22,6 @@ public class ProductServiceImplemantation implements ProductService {
     @Override
     public Product updateProduct(Product product, int productId) {
         Product depDB = productRepository.findById(productId).get();
-        System.out.println("id----"+productId);
         if (Objects.nonNull(product.getName()) && !"".equalsIgnoreCase(product.getName())) {
             depDB.setName(product.getName());
         }
