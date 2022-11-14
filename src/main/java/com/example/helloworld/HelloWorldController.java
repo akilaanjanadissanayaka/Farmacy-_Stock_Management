@@ -9,7 +9,7 @@ public class HelloWorldController {
     public String helloWorld(){
         return "Hello world from spring boot";
     }
-//    Alt+Shift+F10 to run
+    //Alt+Shift+F10 to run
     @RequestMapping("/goodbye")
     public String goodbay(){
         return "Bye Byeeee";
