@@ -15,16 +15,19 @@ public class ProductServiceImplemantation implements ProductService {
 
     @Override
     public String deleteProduct(int id) {
-        productRepository.existsById((int) id);
+        productRepository.deleteById((int) id);
         return "success";
     }
 
     @Override
     public Product updateProduct(Product product, int productId) {
         Product depDB = productRepository.findById(productId).get();
-
+        System.out.println("id----"+productId);
         if (Objects.nonNull(product.getName()) && !"".equalsIgnoreCase(product.getName())) {
             depDB.setName(product.getName());
+        }
+        if (Objects.nonNull(product.getCategory()) && !"".equalsIgnoreCase(product.getCategory())) {
+            depDB.setCategory(product.getCategory());
         }
 
         return productRepository.save(depDB);
