@@ -4,6 +4,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "Category")
+    private String Category;
+
     public Product() {
     }
     public int getId() {
@@ -32,13 +42,5 @@ public class Product {
         Category = category;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "Category")
-    private String Category;
 }
