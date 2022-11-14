@@ -30,7 +30,7 @@ public class productController {
         productService.deleteProduct(id);
     }
 
-    @PutMapping("/departments/{id}")
+    @PutMapping("/updateProduct/{id}")
     public Product updateProduct(@RequestBody Product product,
                      @PathVariable("id") int productId)
     {
