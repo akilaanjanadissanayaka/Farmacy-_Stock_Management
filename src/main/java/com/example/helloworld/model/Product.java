@@ -1,4 +1,7 @@
 package com.example.helloworld.model;
+import com.sun.istack.NotNull;
+import org.springframework.boot.autoconfigure.web.WebProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,16 +11,28 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
+    @NotNull
     private String name;
 
-    @Column(name = "Category")
+    @Column(name = "Category",nullable = false)
     private String Category;
+
+    @Column(name = "qty",nullable = false)
+    private int qty;
 
     public Product() {
     }
     public int getId() {
         return id;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
     public void setId(int id) {
