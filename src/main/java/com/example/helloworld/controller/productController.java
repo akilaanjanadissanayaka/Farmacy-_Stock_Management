@@ -38,6 +38,13 @@ public class productController {
         return productService.updateProduct(
                 product, productId);
     }
+    @PutMapping("/updateProductqty/{id}/{qty}")
+    public Product updateProductqty(@PathVariable("id") int productId , @PathVariable("qty") int qty)
+    {
+        //To decrease set value as minus
+        return productService.updateProductqty(productId,qty);
+
+    }
 
 
 }

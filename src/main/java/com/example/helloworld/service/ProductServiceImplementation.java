@@ -18,7 +18,7 @@ public class ProductServiceImplementation implements ProductService {
         productRepository.deleteById((int) id);
         return "success";
     }
-
+//    http://localhost:8080/api/updateProduct/0
     @Override
     public Product updateProduct(Product product, int productId) {
         Product depDB = productRepository.findById(productId).get();
@@ -28,7 +28,14 @@ public class ProductServiceImplementation implements ProductService {
         if (Objects.nonNull(product.getCategory()) && !"".equalsIgnoreCase(product.getCategory())) {
             depDB.setCategory(product.getCategory());
         }
+        return productRepository.save(depDB);
+    }
 
+    @Override
+    public Product updateProductqty(int productId, int qty) {
+        Product depDB = productRepository.findById(productId).get();
+        int newQty= depDB.getQty()+qty;
+        depDB.setQty(newQty);
         return productRepository.save(depDB);
     }
 
