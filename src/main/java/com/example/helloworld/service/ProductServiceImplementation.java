@@ -50,5 +50,8 @@ public class ProductServiceImplementation implements ProductService {
         return productRepository.save(product);
     }
 
-
+    @Override
+    public Product getProductById(int productId) {
+        return productRepository.getProductById(productId);
+    }
 }
