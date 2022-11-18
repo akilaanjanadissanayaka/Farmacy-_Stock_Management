@@ -1,8 +1,10 @@
 package com.example.helloworld.model;
-import com.sun.istack.NotNull;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "product")
@@ -11,14 +13,16 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "name",nullable = false)
-    @NotNull
+    @Column(name = "name")
+    @NotNull(message = "Name is mandatory")
     private String name;
 
-    @Column(name = "Category",nullable = false)
+    @Column(name = "Category")
+    @NotNull(message = "Category is mandatory")
     private String Category;
 
-    @Column(name = "qty",nullable = false)
+    @Column(name = "qty")
+    @Min(value = 0, message = "Value must be positive")
     private int qty;
 
     public Product() {
