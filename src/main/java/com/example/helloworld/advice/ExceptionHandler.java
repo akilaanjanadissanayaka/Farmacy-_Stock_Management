@@ -1,5 +1,6 @@
 package com.example.helloworld.advice;
 
+import com.example.helloworld.exception.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -24,5 +25,15 @@ public class ExceptionHandler {
             errors.put(fieldName, errorMessage);
         });
         return errors;
+    }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @org.springframework.web.bind.annotation.ExceptionHandler(ProductNotFoundException.class)
+    public Map<String, String> handleBusinessExceptions(
+            ProductNotFoundException px) {
+
+        Map<String, String> errors = new HashMap<>();
+        errors.put("Error:", px.getMessage());
+        return  errors;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.helloworld.service;
 
 import com.example.helloworld.Repository.ProductRepository;
+import com.example.helloworld.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.helloworld.model.Product;
@@ -51,7 +52,13 @@ public class ProductServiceImplementation implements ProductService {
     }
 
     @Override
-    public Product getProductById(int productId) {
-        return productRepository.getProductById(productId);
+    public Product getProductById(int productId) throws ProductNotFoundException {
+        Product product= productRepository.getProductById(productId);
+        if(product!= null){
+            return product;
+        }
+        else {
+            throw new ProductNotFoundException("Product not found id- "+productId);
+        }
     }
 }
