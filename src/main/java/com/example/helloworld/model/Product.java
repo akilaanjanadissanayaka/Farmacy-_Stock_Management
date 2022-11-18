@@ -15,10 +15,12 @@ public class Product {
 
     @Column(name = "name")
     @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
     private String name;
 
     @Column(name = "Category")
     @NotNull(message = "Category is mandatory")
+    @NotBlank(message = "Category is mandatory")
     private String Category;
 
     @Column(name = "qty")
