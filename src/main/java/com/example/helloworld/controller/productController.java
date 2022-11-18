@@ -2,6 +2,7 @@ package com.example.helloworld.controller;
 
 
 import com.example.helloworld.Repository.ProductRepository;
+import com.example.helloworld.exception.ProductNotFoundException;
 import com.example.helloworld.model.Product;
 import com.example.helloworld.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class productController {
     }
 
     @DeleteMapping("deleteProduct/{id}")
-    public void deleteTutorial(@PathVariable("id") int id ) {
+    public void deleteTutorial(@PathVariable("id") @Valid int id ) {
         productService.deleteProduct(id);
     }
 
@@ -47,8 +48,7 @@ public class productController {
 
     }
     @GetMapping("/getProductById/{id}")
-    public Product getProductById(@PathVariable("id") int productId)
-    {
+    public Product getProductById(@PathVariable("id") int productId) throws ProductNotFoundException {
 
         return productService.getProductById(productId);
     }
