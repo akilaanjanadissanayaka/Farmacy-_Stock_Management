@@ -7,6 +7,7 @@ import com.example.helloworld.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class productController {
     private ProductService productService;
 
     @PostMapping("/AddProduct")
-    public Product addProduct(@RequestBody Product product){
+    public Product addProduct(@RequestBody @Valid Product product){
         return productService.addProduct(product);
     }
 
