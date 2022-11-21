@@ -1,10 +1,10 @@
 package com.example.helloworld.controller;
 
-
-import com.example.helloworld.Repository.ProductRepository;
 import com.example.helloworld.exception.ProductNotFoundException;
 import com.example.helloworld.model.Product;
 import com.example.helloworld.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class productController {
+    Logger logger = LoggerFactory.getLogger(productController.class);
     @Autowired
     private ProductService productService;
 
@@ -23,13 +24,15 @@ public class productController {
     }
 
     @GetMapping("/getall")
-    public List<Product> getProduct(){
-        return productService.getProduct();
+    public String getProduct(){
+        logger.error("FATAL ERROR");
+        return "productService.getProduct()";
     }
 
     @DeleteMapping("deleteProduct/{id}")
-    public void deleteTutorial(@PathVariable("id") @Valid int id ) {
+    public String deleteTutorial(@PathVariable("id") @Valid int id ) {
         productService.deleteProduct(id);
+        return "Product successfully deleted";
     }
 
     @PutMapping("/updateProduct/{id}")
