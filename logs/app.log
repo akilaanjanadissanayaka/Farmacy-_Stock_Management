@@ -1,0 +1,27 @@
+2022-11-21 17:56:31,118 INFO com.example.helloworld.CheckHTTPResponse [main] Started CheckHTTPResponse in 17.445 seconds (JVM running for 19.468)
+2022-11-21 17:56:32,420 INFO com.example.helloworld.HelloWorldApplicationTests [main] Starting HelloWorldApplicationTests using Java 19.0.1 on LAPTOP-KO9KLUCB with PID 6020 (started by HP in E:\Springboot_CRUD\Farmacy-_Stock_Management)
+2022-11-21 17:56:32,420 DEBUG com.example.helloworld.HelloWorldApplicationTests [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-21 17:56:32,434 INFO com.example.helloworld.HelloWorldApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2022-11-21 17:56:33,634 INFO com.example.helloworld.HelloWorldApplicationTests [main] Started HelloWorldApplicationTests in 1.262 seconds (JVM running for 21.989)
+2022-11-21 17:57:48,176 INFO com.example.helloworld.CheckHTTPResponse [main] Starting CheckHTTPResponse using Java 19.0.1 on LAPTOP-KO9KLUCB with PID 18296 (started by HP in E:\Springboot_CRUD\Farmacy-_Stock_Management)
+2022-11-21 17:57:48,177 DEBUG com.example.helloworld.CheckHTTPResponse [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-21 17:57:48,178 INFO com.example.helloworld.CheckHTTPResponse [main] No active profile set, falling back to 1 default profile: "default"
+2022-11-21 17:57:52,737 INFO com.example.helloworld.CheckHTTPResponse [main] Started CheckHTTPResponse in 4.882 seconds (JVM running for 6.33)
+2022-11-21 17:57:53,077 INFO com.example.helloworld.HelloWorldApplicationTests [main] Starting HelloWorldApplicationTests using Java 19.0.1 on LAPTOP-KO9KLUCB with PID 18296 (started by HP in E:\Springboot_CRUD\Farmacy-_Stock_Management)
+2022-11-21 17:57:53,077 DEBUG com.example.helloworld.HelloWorldApplicationTests [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-21 17:57:53,077 INFO com.example.helloworld.HelloWorldApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2022-11-21 17:57:54,054 INFO com.example.helloworld.HelloWorldApplicationTests [main] Started HelloWorldApplicationTests in 0.999 seconds (JVM running for 7.647)
+2022-11-21 17:58:48,476 INFO com.example.helloworld.HelloWorldApplication [main] Starting HelloWorldApplication using Java 19.0.1 on LAPTOP-KO9KLUCB with PID 9636 (E:\Springboot_CRUD\Farmacy-_Stock_Management\target\classes started by HP in E:\Springboot_CRUD\Farmacy-_Stock_Management)
+2022-11-21 17:58:48,478 DEBUG com.example.helloworld.HelloWorldApplication [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-21 17:58:48,479 INFO com.example.helloworld.HelloWorldApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-11-21 17:58:52,122 INFO com.example.helloworld.HelloWorldApplication [main] Started HelloWorldApplication in 4.067 seconds (JVM running for 4.824)
+2022-11-21 17:59:04,620 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-1] FATAL ERROR
+2022-11-21 17:59:06,709 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-2] FATAL ERROR
+2022-11-21 17:59:06,869 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-3] FATAL ERROR
+2022-11-21 17:59:07,038 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-4] FATAL ERROR
+2022-11-21 17:59:07,183 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-5] FATAL ERROR
+2022-11-21 17:59:07,326 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-6] FATAL ERROR
+2022-11-21 17:59:07,478 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-7] FATAL ERROR
+2022-11-21 17:59:07,626 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-8] FATAL ERROR
+2022-11-21 17:59:07,778 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-9] FATAL ERROR
+2022-11-21 17:59:07,956 ERROR com.example.helloworld.controller.productController [http-nio-8080-exec-10] FATAL ERROR
