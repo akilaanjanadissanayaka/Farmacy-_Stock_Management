@@ -24,9 +24,9 @@ public class productController {
     }
 
     @GetMapping("/getall")
-    public String getProduct(){
+    public List<Product> getProduct(){
         logger.error("FATAL ERROR");
-        return "productService.getProduct()";
+        return productService.getProduct();
     }
 
     @DeleteMapping("deleteProduct/{id}")
