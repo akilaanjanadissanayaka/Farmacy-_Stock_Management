@@ -2,6 +2,7 @@ package com.example.helloworld.service;
 
 import com.example.helloworld.Repository.ProductRepository;
 import com.example.helloworld.exception.ProductNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.helloworld.model.Product;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
+@Slf4j
 public class ProductServiceImplementation implements ProductService {
     @Autowired
     private ProductRepository productRepository;
@@ -42,6 +44,7 @@ public class ProductServiceImplementation implements ProductService {
 
     @Override
     public List<Product> getProduct() {
+        log.info("Get user details");
         return (List<Product>) productRepository.findAll();
     }
 
