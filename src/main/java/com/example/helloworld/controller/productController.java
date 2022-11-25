@@ -1,5 +1,6 @@
 package com.example.helloworld.controller;
 
+import com.example.helloworld.Repository.ProductRepository;
 import com.example.helloworld.exception.ProductNotFoundException;
 import com.example.helloworld.model.Product;
 import com.example.helloworld.service.ProductService;
@@ -17,7 +18,13 @@ public class productController {
     Logger logger = LoggerFactory.getLogger(productController.class);
     @Autowired
     private ProductService productService;
+    @Autowired
+    ProductRepository repo;
 
+    @GetMapping
+    public List<Product> list(){
+        return repo.findAll();
+    }
     @PostMapping("/AddProduct")
     public Product addProduct(@RequestBody @Valid Product product){
         return productService.addProduct(product);
@@ -25,7 +32,8 @@ public class productController {
 
     @GetMapping("/getall")
     public List<Product> getProduct(){
-        logger.error("FATAL ERROR");
+//        logger.error("FATAL ERROR");
+        System.out.println("Get all");
         return productService.getProduct();
     }
 
