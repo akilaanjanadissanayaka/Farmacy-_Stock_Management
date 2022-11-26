@@ -27,7 +27,7 @@ public class ExceptionHandler {
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
         });
-        logger.info("error -"+errors);
+        logger.error("error -"+errors);
         return errors;
     }
 
@@ -38,7 +38,7 @@ public class ExceptionHandler {
 
         Map<String, String> errors = new HashMap<>();
         errors.put("Error:", px.getMessage());
-
+        logger.error("Product not found -"+px.getMessage());
         return  errors;
     }
 }

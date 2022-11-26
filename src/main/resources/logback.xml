@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-    <property name="LOG_FILE" value="C:/Users/Akila/Desktop/logs/app.log"/>
+    <property name="LOG_FILE" value="logs/app.log"/>
 
     <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_FILE}</file>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>logs/archived/PharmacyStock.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each archived file, size max 5KB -->
             <maxFileSize>5KB</maxFileSize>
             <!-- total size of all archive files, if total size > 20KB,
@@ -17,7 +17,7 @@
             <maxHistory>60</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+            <pattern>%d %thread [%-5level] [%-50logger] %c{1.} %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -26,7 +26,7 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
-                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n%throwable
+                %d %thread [%-5level] [%-50logger] %c{1.} %msg%n
             </Pattern>
         </layout>
     </appender>
@@ -65,15 +65,3 @@
     </root>
 
 </configuration>
-
-<!--    <root level="INFO">-->
-<!--        <appender-ref ref="File" />-->
-<!--        <appender-ref ref="Console" />-->
-<!--    </root>-->
-
-<!--    <logger name="com.sergio.socialnetwork" level="DEBUG" additivity="false">-->
-<!--        <appender-ref ref="File" />-->
-<!--        <appender-ref ref="Console" />-->
-<!--    </logger>-->
-
-<!--</configuration>-->
