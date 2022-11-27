@@ -1,1 +1,1 @@
-2022-11-25 18:07:57,593 main [INFO ] [com.example.helloworld.HelloWorldApplication      ] com.example.helloworld.HelloWorldApplication Started HelloWorldApplication in 6.829 seconds (JVM running for 8.662)
+2022-11-26 23:52:24,001 http-nio-8080-exec-5 [INFO ] [com.example.helloworld.service.ProductServiceImplementation] com.example.helloworld.service.ProductServiceImplementation Get user details

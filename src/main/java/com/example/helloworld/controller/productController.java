@@ -32,7 +32,6 @@ public class productController {
 
     @GetMapping("/getall")
     public List<Product> getProduct(){
-//        logger.error("FATAL ERROR");
         System.out.println("Get all");
         return productService.getProduct();
     }

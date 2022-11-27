@@ -2,6 +2,7 @@ package com.example.helloworld.Auth;
 
 import javax.validation.Valid;
 
+import com.example.helloworld.JWT.jwtTokenUtil;
 import com.example.helloworld.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AuthApi {
     @Autowired AuthenticationManager authManager;
-//    @Autowired JwtTokenUtil jwtUtil;
+    @Autowired jwtTokenUtil jwtUtil;
 
     @PostMapping("/auth/login")
     public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
@@ -24,8 +25,8 @@ public class AuthApi {
             );
 
             User user = (User) authentication.getPrincipal();
-//            String accessToken = jwtUtil.generateAccessToken(user);
-            String accessToken="My jwt tokennnnnn";
+            String accessToken = jwtUtil.generateAccessToken(user);
+//            String accessToken="My jwt tokennnnnn";
             AuthResponse response = new AuthResponse(user.getEmail(), accessToken);
 
             return ResponseEntity.ok(response);
