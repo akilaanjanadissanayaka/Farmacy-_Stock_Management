@@ -4,6 +4,8 @@ import com.example.helloworld.Repository.ProductRepository;
 import com.example.helloworld.exception.ProductNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import com.example.helloworld.model.Product;
 
@@ -34,6 +36,28 @@ public class ProductServiceImplementation implements ProductService {
         return productRepository.save(depDB);
     }
 
+
+    @Autowired
+    private JavaMailSender mailSender;
+
+    public void sendSimpleEmail(String toEmail,
+                                String subject,
+                                String body
+    ) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("akiladissanayaka255@gmail.com");
+        message.setTo(toEmail);
+        message.setText(body);
+        message.setSubject(subject);
+        mailSender.send(message);
+        System.out.println("Mail Send...");
+
+
+    }
+
+
+
+
     @Override
     public Product updateProductqty(int productId, int qty) {
         Product depDB = productRepository.findById(productId).get();
@@ -51,6 +75,7 @@ public class ProductServiceImplementation implements ProductService {
 
     @Override
     public Product addProduct(Product product) {
+        sendSimpleEmail("akiladissanayaka255@gmail.com","Test subject",product.getName());
         return productRepository.save(product);
     }
 
